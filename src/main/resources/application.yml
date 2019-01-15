@@ -1,0 +1,26 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8090
+  servlet:
+    context-path: /
+
+zuul:
+  routes:
+    test:
+      id: test
+      path: /s/**
+      url: https://www.baidu.com/s
+    cps:
+      id: cps
+      path: /cps/**
+      url: http://10.110.25.220:10001
+    cps2:
+      id: cps2
+      path: /cps2/**
+      url: http://10.110.25.220:10001
+    cps3:
+      id: cps3
+      path: /cps3/**
+      url: http://10.110.25.220:10001
+  ssl-hostname-validation-enabled: false
